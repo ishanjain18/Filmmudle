@@ -3,14 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NbThemeModule, NbLayoutModule, NbCardModule } from '@nebular/theme';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { SearchBoxComponent } from './components/search-box/search-box.component';
+import { FilmCardComponent } from './components/film-card/film-card.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SearchBoxComponent,
+    FilmCardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    NbThemeModule.forRoot({ name: 'default' }),
+    NbLayoutModule,
+    NbCardModule,
+    NbEvaIconsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
