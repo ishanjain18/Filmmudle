@@ -9,13 +9,14 @@ import { ApiService } from 'src/app/services/api.service';
 export class SearchBoxComponent implements OnInit {
 
   films: any;
+
+  // triggered on search
   searchEvent(searchTerm: string) {
     this.apiService.fetchFilms(searchTerm).subscribe((data: any) => {
       this.films = data
 
     })
   }
-
 
   constructor(private apiService: ApiService) { }
 

@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class FilmCardComponent implements OnInit {
 
+  // default values for a film card
   @Input() title: string = "Loading...";
   @Input() year: string = "Loading...";
   @Input() imdbID: string = "";
@@ -17,13 +18,11 @@ export class FilmCardComponent implements OnInit {
   favourite: any = false;
 
   likeEvent() {
-    // alert("Added " + this.filmData.Title + " to your favourites!")
     this.favourite = true;
     localStorage.setItem(this.filmData.imdbID, JSON.stringify(this.filmData))
   }
 
   dislikeEvent() {
-    // alert("Removed " + this.filmData.Title + " from your favourites!")
     this.favourite = false;
     localStorage.removeItem(this.imdbID)
   }

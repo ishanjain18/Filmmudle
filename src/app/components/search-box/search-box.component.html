@@ -1,3 +1,4 @@
+<!-- Contains code for the search bar as well as the search button -->
 <div class="search-bar">
   <nb-icon icon="search-outline" id="search-icon" status="basic"></nb-icon>
   <input
@@ -23,7 +24,7 @@
     Search <nb-icon icon="search-outline"></nb-icon>
   </button>
 </div>
-
+<!-- view in case movies are not returned in the response -->
 <div *ngIf="films?.Response === 'False'">
   <br />
   <h2>No movies found, try searching again with different keyword(s).</h2>
