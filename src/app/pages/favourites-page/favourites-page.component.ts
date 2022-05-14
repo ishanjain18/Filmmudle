@@ -17,7 +17,6 @@ export class FavouritesPageComponent implements OnInit {
     for (let item of Object.entries({ ...localStorage })) {
       this.favData.push((JSON.parse(item[1] as string)))
     }
-    console.log(this.favData)
   }
 
 }

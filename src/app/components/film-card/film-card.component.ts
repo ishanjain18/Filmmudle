@@ -25,7 +25,6 @@ export class FilmCardComponent implements OnInit {
   dislikeEvent() {
     // alert("Removed " + this.filmData.Title + " from your favourites!")
     this.favourite = false;
-    console.log(this.favourite)
     localStorage.removeItem(this.imdbID)
   }
 
