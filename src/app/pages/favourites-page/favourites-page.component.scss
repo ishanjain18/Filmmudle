@@ -1,0 +1,10 @@
+.card-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card-col {
+  max-width: 355px;
+  margin: 25px 20px;
+}

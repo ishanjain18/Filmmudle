@@ -1,14 +1,36 @@
-<input id="search" type="text" name="search" #search />
-<button type="submit" (click)="searchEvent(search.value)">Search</button>
+<div class="search-bar">
+  <nb-icon icon="search-outline" id="search-icon" status="basic"></nb-icon>
+  <input
+    nbInput
+    id="search"
+    fullWidth
+    fieldSize="giant"
+    type="text"
+    name="search"
+    #search
+    placeholder="Search Filmmudle for Films/Movies or TV shows!"
+    (keydown.enter)="searchEvent(search.value)"
+  />
+  <button
+    nbButton
+    size="giant"
+    hero
+    status="info"
+    shape="semi-round"
+    id="search-button"
+    (click)="searchEvent(search.value)"
+  >
+    Search <nb-icon icon="search-outline"></nb-icon>
+  </button>
+</div>
 
 <div *ngIf="films?.Response === 'False'">
   <br />
-  No movies found, try searching again with different keyword(s).
+  <h2>No movies found, try searching again with different keyword(s).</h2>
 </div>
 
 <div *ngIf="films?.Response === 'True'" class="card-row">
   <div *ngFor="let film of films.Search" class="card-col">
-    <p>{{ film.Title }}</p>
     <app-film-card
       [title]="film.Title"
       [year]="film.Year"

@@ -31,7 +31,8 @@ import { HttpClientModule } from '@angular/common/http'
     NbButtonModule,
     NbIconModule,
     NbInputModule,
-    HttpClientModule
+    HttpClientModule,
+    NbButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

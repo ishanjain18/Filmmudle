@@ -13,31 +13,27 @@ export class FilmCardComponent implements OnInit {
   @Input() poster: string = "../../../assets/poster.png";
 
   filmData: any;
-
-
-  favourite: boolean = false;
+  localData: any;
+  favourite: any = false;
 
   likeEvent() {
     // alert("Added " + this.filmData.Title + " to your favourites!")
     this.favourite = true;
-    console.log(this.favourite)
-    console.log(this.filmData)
+    localStorage.setItem(this.filmData.imdbID, JSON.stringify(this.filmData))
   }
 
   dislikeEvent() {
     // alert("Removed " + this.filmData.Title + " from your favourites!")
     this.favourite = false;
     console.log(this.favourite)
-
+    localStorage.removeItem(this.imdbID)
   }
-
-
 
   constructor() { }
 
   ngOnInit(): void {
-
-
+    this.localData = localStorage.getItem(this.imdbID)
+    this.favourite = JSON.parse(this.localData) != null
     this.filmData = {
       "Title": this.title,
       "Year": this.year,

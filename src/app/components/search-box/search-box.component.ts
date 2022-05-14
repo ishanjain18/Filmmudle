@@ -20,7 +20,7 @@ export class SearchBoxComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    console.log(this.films)
+
   }
 
 }

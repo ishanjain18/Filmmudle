@@ -1,1 +1,15 @@
-<p>favourites-page works!</p>
+<div *ngIf="favData.length !== 0" class="card-row">
+  <div *ngFor="let film of favData" class="card-col">
+    <app-film-card
+      [title]="film.Title"
+      [year]="film.Year"
+      [poster]="film.Poster"
+      [imdbID]="film.imdbID"
+    ></app-film-card>
+  </div>
+</div>
+
+<div *ngIf="favData.length === 0">
+  <br />
+  <h2>Add favourites by hovering over movies and pressing the like button!</h2>
+</div>
