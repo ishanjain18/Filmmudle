@@ -1,4 +1,4 @@
-# Filmmudle2
+# Filmmudle
 
 <div align="center">
   <img src='./src/assets/demo.gif'>
