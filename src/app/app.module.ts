@@ -10,6 +10,7 @@ import { SearchBoxComponent } from './components/search-box/search-box.component
 import { FilmCardComponent } from './components/film-card/film-card.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { FavouritesPageComponent } from './pages/favourites-page/favourites-page.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FavouritesPageComponent } from './pages/favourites-page/favourites-page
     NbEvaIconsModule,
     NbButtonModule,
     NbIconModule,
-    NbInputModule
+    NbInputModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

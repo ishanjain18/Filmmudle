@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-film-card',
@@ -7,12 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilmCardComponent implements OnInit {
 
+  @Input() title: string = "Loading...";
+  @Input() year: string = "Loading...";
+  @Input() imdbID: string = "";
+  @Input() poster: string = "../../../assets/poster.png";
+
+  filmData: any;
+
+
   favourite: boolean = false;
 
   likeEvent() {
     // alert("Added " + this.filmData.Title + " to your favourites!")
     this.favourite = true;
     console.log(this.favourite)
+    console.log(this.filmData)
   }
 
   dislikeEvent() {
@@ -22,18 +31,20 @@ export class FilmCardComponent implements OnInit {
 
   }
 
-  filmData = {
-    "Title": "The Great Gatsby",
-    "Year": "2013",
-    "imdbID": "tt1343092",
-    "Type": "movie",
-    "Poster": "https://m.media-amazon.com/images/M/MV5BMTkxNTk1ODcxNl5BMl5BanBnXkFtZTcwMDI1OTMzOQ@@._V1_SX300.jpg",
-    "Poster2": "https://m.media-amazon.com/images/M/MV5BNzA2NmYxMWUtNzBlMC00MWM2LTkwNmQtYTFlZjQwODNhOWE0XkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SX300.jpg"
-  }
+
 
   constructor() { }
 
   ngOnInit(): void {
+
+
+    this.filmData = {
+      "Title": this.title,
+      "Year": this.year,
+      "imdbID": this.imdbID,
+      "Type": "movie",
+      "Poster": this.poster == "N/A" ? "../../../assets/poster.png" : this.poster
+    }
   }
 
 }

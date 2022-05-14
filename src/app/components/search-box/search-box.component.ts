@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-search-box',
@@ -7,13 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchBoxComponent implements OnInit {
 
+  films: any;
   searchEvent(searchTerm: string) {
-    console.log(searchTerm)
+    this.apiService.fetchFilms(searchTerm).subscribe((data: any) => {
+      this.films = data
+
+    })
   }
 
-  constructor() { }
+
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
+    console.log(this.films)
   }
 
 }

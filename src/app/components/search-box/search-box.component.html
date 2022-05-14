@@ -1,2 +1,19 @@
 <input id="search" type="text" name="search" #search />
 <button type="submit" (click)="searchEvent(search.value)">Search</button>
+
+<div *ngIf="films?.Response === 'False'">
+  <br />
+  No movies found, try searching again with different keyword(s).
+</div>
+
+<div *ngIf="films?.Response === 'True'" class="card-row">
+  <div *ngFor="let film of films.Search" class="card-col">
+    <p>{{ film.Title }}</p>
+    <app-film-card
+      [title]="film.Title"
+      [year]="film.Year"
+      [poster]="film.Poster"
+      [imdbID]="film.imdbID"
+    ></app-film-card>
+  </div>
+</div>
