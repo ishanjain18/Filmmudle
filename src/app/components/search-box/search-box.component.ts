@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchBoxComponent implements OnInit {
 
+  searchEvent(searchTerm: string) {
+    console.log(searchTerm)
+  }
+
   constructor() { }
 
   ngOnInit(): void {

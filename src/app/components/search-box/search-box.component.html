@@ -1,2 +1,2 @@
-<input id="search" />
-<button type="submit">Search</button>
+<input id="search" type="text" name="search" #search />
+<button type="submit" (click)="searchEvent(search.value)">Search</button>

@@ -1,17 +1,17 @@
 <nb-layout>
   <!--Navigation Bar at the App Level-->
   <nb-layout-header class="nav-bar">
-    <a href="/">
+    <a routerLink="/">
       <img class="logo" src="../assets/filmmudle-logo-full.png" />
     </a>
     <div class="nav-links">
-      <a href="/favourites">Top Movies</a>
-      <a href="/favourites">Favourites</a>
-      <a href="/favourites">Watchlist</a>
+      <a routerLink="/favourites">Top Movies</a>
+      <a routerLink="/favourites">Favourites</a>
+      <a routerLink="/favourites">Watchlist</a>
     </div>
   </nb-layout-header>
 
   <nb-layout-column>
-    <app-film-card></app-film-card>
+    <router-outlet></router-outlet>
   </nb-layout-column>
 </nb-layout>

@@ -1,6 +1,22 @@
-<nb-card>
-  <nb-card-body>
-    <img src="{{ filmData['Poster'] }}" />
-    {{ filmData["Title"] + " (" + filmData["Year"] + ")" }}
+<nb-card class="film-card" status="success">
+  <nb-card-body class="card-body">
+    <img class="card-image" src="{{ filmData['Poster2'] }}" />
+    <div class="favourite">
+      <button
+        *ngIf="favourite"
+        nbButton
+        status="basic"
+        (click)="dislikeEvent()"
+      >
+        <nb-icon icon="heart"></nb-icon>Dislike
+      </button>
+
+      <button *ngIf="!favourite" nbButton status="basic" (click)="likeEvent()">
+        <nb-icon icon="heart-outline"></nb-icon>Like
+      </button>
+    </div>
   </nb-card-body>
+  <nb-card-footer class="card-footer">
+    {{ filmData["Title"] + " (" + filmData["Year"] + ")" }}
+  </nb-card-footer>
 </nb-card>
