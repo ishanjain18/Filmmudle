@@ -1,5 +1,9 @@
 # Filmmudle2
 
+<div align="center">
+  <img src='./src/assets/demo.gif'>
+</div>
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
 
 ## Development server
